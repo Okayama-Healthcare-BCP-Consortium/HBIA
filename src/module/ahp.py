@@ -37,11 +37,11 @@ def calc_priority(mat):
     return prios
 
 
-if __name__ == "__main__":
+def calc(ques_path='./data/input/AHPアンケート.xlsx',list_path='./data/input/基準・業務・必要物リスト.xlsx'):
 
-    df = pd.read_excel('../../data/input/AHPアンケート.xlsx', sheet_name='基準')
+    df = pd.read_excel(ques_path, sheet_name='基準')
 
-    stds = list(pd.read_excel('../../data/input/基準・業務リスト.xlsx')['基準一覧'].dropna())
+    stds = list(pd.read_excel(list_path)['基準一覧'].dropna())
     std_mat = np.ones((len(stds), len(stds)))
 
     for _, row in df.iterrows():
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     for std in stds:
 
-        df = pd.read_excel('../../data/input/AHPアンケート.xlsx', sheet_name=std)
+        df = pd.read_excel(ques_path, sheet_name=std)
 
         objs = set(df['比較a'])
         objs = list(objs.union(set(df['比較b'])))
@@ -123,9 +123,4 @@ if __name__ == "__main__":
 
             tsk2prio[tsk] = prio + 1
 
-    tsks = list(pd.read_excel('../../data/input/基準・業務リスト.xlsx')['業務一覧'].dropna())
-    df = pd.DataFrame({
-        '業務名': tsks,
-        'Priority': [tsk2prio[tsk] for tsk in tsks]
-    })
-    df.to_excel('../../data/result/AHPによる解析結果.xlsx')
+    return tsk2prio
