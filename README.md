@@ -34,33 +34,33 @@ $ source venv/bin/activate
 
 ### 基準・業務・必要物一覧データの準備
 
-\[root\]/data/input/基準・業務・必要物リスト.xlsxに基準と業務一覧を入力してください．
+data/input/基準・業務・必要物リスト.xlsxに基準と業務一覧を入力してください．
 
 ### 入力データの生成
 
 以下のコマンドをターミナルで実行して下さい．
 ```shell
-python [root]/src/data/dump_ahp_data.py
+python src/data/dump_ahp_data.py
 ```
 
 ### AHPアンケートの記入
 
-\[root\]/data/input/AHPアンケート.xlsxという自動生成されたアンケートに答えてください．
+data/input/AHPアンケート.xlsxという自動生成されたアンケートに答えてください．
 
 ### 必要物フィルタのための入力データの記入
 
-\[root\]/data/input/必要物フィルタのための入力データ.xlsxに必要事項を入力してください．
+data/input/必要物フィルタのための入力データ.xlsxに必要事項を入力してください．
 
 ### 階層分析（AHP）と必要物フィルタの実行
 
 以下のコマンドをターミナルで実行して下さい．
 ```shell
-python [root]/main.py
+python main.py
 ```
 
 ### 結果の場所
 
-\[root\]/result/AHP・必要物フィルタによる解析結果.xlsxを開いて確認してください．
+result/AHP・必要物フィルタによる解析結果.xlsxを開いて確認してください．
 
 ## AHP Module Rules
 
