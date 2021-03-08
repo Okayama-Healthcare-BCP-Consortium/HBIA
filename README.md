@@ -15,14 +15,14 @@ $ cd [project dir]
 $ python3 -m venv venv
 ```
 
-### パッケージのインストール
-```shell
-(venv)$ pip install -r requirements.txt
-```
-
 ### Activate
 ```shell
 $ source venv/bin/activate
+```
+
+### パッケージのインストール
+```shell
+(venv)$ pip install -r requirements.txt
 ```
 
 ### Deactivate
