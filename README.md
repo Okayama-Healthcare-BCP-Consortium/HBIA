@@ -1,43 +1,66 @@
 # 医療ビジネスインパクト分析システム（Healthcare BIA System）
 
-## Usage
-
-### コードのクローン
+## コードのクローン
 
 以下のコマンドをターミナルで実行して下さい．
 ```shell
 git clone git@github.com:Okayama-Healthcare-BCP-Consortium/HBIA.git
 ```
 
+## 環境構築
+
+### 環境作成
+```shell
+$ cd [project dir]
+$ python3 -m venv venv
+```
+
+### パッケージのインストール
+```shell
+(venv)$ pip install -r requirements.txt
+```
+
+### Activate
+```shell
+$ source venv/bin/activate
+```
+
+### Deactivate
+```shell
+(venv)$ deactivate
+```
+
+## プログラムの実行
+
 ### 基準・業務・必要物一覧データの準備
 
-<root>/data/input/基準・業務・必要物リスト.xlsxに基準と業務一覧を入力してください．
+\[root\]/data/input/基準・業務・必要物リスト.xlsxに基準と業務一覧を入力してください．
 
 ### 入力データの生成
 
 以下のコマンドをターミナルで実行して下さい．
 ```shell
-python <root>/src/data/dump_ahp_data.py
+python [root]/src/data/dump_ahp_data.py
 ```
 
 ### AHPアンケートの記入
 
-<root>/data/input/AHPアンケート.xlsxという自動生成されたアンケートに答えてください．
+\[root\]/data/input/AHPアンケート.xlsxという自動生成されたアンケートに答えてください．
 
 ### 必要物フィルタのための入力データの記入
 
-<root>/data/input/必要物フィルタのための入力データ.xlsxに必要事項を入力してください．
+\[root\]/data/input/必要物フィルタのための入力データ.xlsxに必要事項を入力してください．
 
 ### 階層分析（AHP）と必要物フィルタの実行
 
 以下のコマンドをターミナルで実行して下さい．
 ```shell
-python <root>/main.py
+python [root]/main.py
 ```
 
 ### 結果の場所
 
-<root>/result/AHP・必要物フィルタによる解析結果.xlsxを開いて確認してください．
+\[root\]/result/AHP・必要物フィルタによる解析結果.xlsxを開いて確認してください．
 
 ## AHP Module Rules
 
